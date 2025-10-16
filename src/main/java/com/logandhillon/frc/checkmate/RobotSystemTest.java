@@ -21,7 +21,6 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
  *
  * @apiNote Do not instantiate nor extend this class.
  * @author logandhillon.com
- * @version v0.9.15
  */
 public final class RobotSystemTest {
     private static final ShuffleboardTab TAB = Shuffleboard.getTab("System Tests");
