@@ -14,6 +14,34 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import edu.wpi.first.wpilibj2.command.Commands;
 
 public class SystemTestWidget {
+    /**
+     * Creates and adds a test widget to the specified Shuffleboard layout.
+     * <p>
+     * This widget provides:
+     * <ul>
+     * <li>A boolean box showing test success or failure.</li>
+     * <li>A text view displaying the test message.</li>
+     * <li>A button to execute the provided test function.</li>
+     * </ul>
+     * 
+     * <p>
+     * When executed, this widget will:
+     * <ol>
+     * <li>Run the supplied test function.</li>
+     * <li>Display the result status (PASS/FAIL) in a boolean
+     * box.</li>
+     * <li>Show the result message in a text field.</li>
+     * </ol>
+     *
+     * @param parent   the parent {@link ShuffleboardLayout} to which this widget
+     *                 belongs
+     * @param id       a unique identifier or name for the test (displayed on the
+     *                 widget)
+     * @param runnable a {@link Supplier} that runs the test and returns a
+     *                 {@link TestResult}
+     *                 indicating whether the test passed or failed, and any message
+     *                 to display
+     */
     public static void create(ShuffleboardLayout parent, String id, Supplier<TestResult> runnable) {
         ShuffleboardLayout layout = parent.getLayout(id, BuiltInLayouts.kGrid)
                 .withSize(3, 1).withProperties(Map.of(

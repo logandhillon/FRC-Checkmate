@@ -1,10 +1,5 @@
 package com.logandhillon.frc.checkmate;
 
-/**
- * Test result for registered tests in {@link DebugCommand}.
- * 
- * @see DebugCommand#register
- */
 public class TestResult {
     protected final boolean ok;
     protected final String message;
@@ -15,23 +10,29 @@ public class TestResult {
     }
 
     /**
-     * @return test result that PASSED with no message
+     * Creates a passing test result with no message.
+     *
+     * @return a successful {@link TestResult}
      */
     public static TestResult success() {
         return new TestResult(true, null);
     }
 
     /**
-     * @param message any information to note about the test
-     * @return test result that PASSED
+     * Creates a passing test result with an optional message.
+     *
+     * @param message a note or additional information about the test
+     * @return a successful {@link TestResult}
      */
     public static TestResult success(String message) {
         return new TestResult(true, message);
     }
 
     /**
-     * @param message reason the test failed
-     * @return test result that FAILED
+     * Creates a failing test result with a reason message.
+     *
+     * @param message the reason for the test failure
+     * @return a failed {@link TestResult}
      */
     public static TestResult fail(String message) {
         return new TestResult(false, message);
